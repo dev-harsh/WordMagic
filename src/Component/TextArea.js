@@ -30,6 +30,10 @@ export default function TextArea(props) {
         }
     }
 
+    const copyText = () =>{
+        navigator.clipboard.writeText(text);
+    }
+
 
     const mode = () =>{
         if((props.mode)==="Light")
@@ -73,18 +77,21 @@ export default function TextArea(props) {
                     </div>
                 </div>
 
-                <div className="container">
-                    <button type="button" className="btn btn-primary mx-2" onClick={upperCase}>UpperCase</button>
-                    <button type="button" className="btn btn-primary mx-2" onClick={lowerCase}>LowerCase</button>
-                    <button type="button" className="btn btn-danger mx-2" onClick={clear}>Clear</button>
-                </div>
-
                 <div className="container my-2">
                     <p>
                         Words : {wordCount()} <br/>
                         Letters : {text.trim().length}
                     </p>
+                </div>
+                
+                <div className="container">
+                    <button type="button" className="btn btn-primary m-1 px" onClick={upperCase}>UpperCase</button>
+                    <button type="button" className="btn btn-primary m-1 px" onClick={lowerCase}>LowerCase</button>
+                    <button type="button" className="btn btn-success m-1 px" onClick={copyText}>Copy</button>
+                    <button type="button" className="btn btn-danger m-1 px" onClick={clear}>Clear</button>
+                </div>
 
+                <div className="container my-2">
                     <h2>Preview</h2>
                     <div className="p-3 text-success bg-success-subtle border border-success-subtle rounded-3">
                     <p>{text}</p>

@@ -17,8 +17,6 @@ function App() {
     }
   }
   
-
-
   return (
     <>
       <Navbar mode={theme} toggleMode={toggleMode}/>
