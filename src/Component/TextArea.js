@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import './TextArea.css';
 
 export default function TextArea(props) {
     const [text,setText]=useState("");
@@ -40,13 +41,13 @@ export default function TextArea(props) {
         {
             return{
                 color:'black',
-                backgroundColor:'white',
+                backgroundColor:'white'
             };
         }
         else{
             return{
                 color:'white',
-                backgroundColor:'black',
+                backgroundColor:'black'
             };
         }
     }

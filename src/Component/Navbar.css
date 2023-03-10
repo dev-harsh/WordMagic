@@ -2,3 +2,9 @@
     padding: 2em 0px;
     min-height: 100vh;
 }
+
+.nav-master-container{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}

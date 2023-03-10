@@ -3,6 +3,7 @@ import './Navbar.css';
 
 export default function Navbar (props) {
   return (
+        <nav className="nav-master-container">
         <nav className="navbar navbar-expand-lg bg-body-tertiary"data-bs-theme={props.mode.toLowerCase()} >
             <div className="container-fluid">
                 <a className="navbar-brand" href="#">Word Magic</a>
@@ -25,6 +26,7 @@ export default function Navbar (props) {
                     </div>
                 </div>
                 </div>
+        </nav>
         </nav>
     )
 }
