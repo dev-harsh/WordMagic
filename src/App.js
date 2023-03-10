@@ -1,6 +1,7 @@
 import Navbar from './Component/Navbar';
 import TextArea from './Component/TextArea';
 import React, { useState } from 'react';
+import Footer from './Component/Footer';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
     <>
       <Navbar mode={theme} toggleMode={toggleMode}/>
       <TextArea mode={theme}/>
+      <Footer/>
     </>
   );
 }

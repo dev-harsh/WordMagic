@@ -91,7 +91,7 @@ export default function TextArea(props) {
                     <button type="button" className="btn btn-danger m-1 px" onClick={clear}>Clear</button>
                 </div>
 
-                <div className="container my-2">
+                <div className="container my-4">
                     <h2>Preview</h2>
                     <div className="p-3 text-success bg-success-subtle border border-success-subtle rounded-3">
                     <p>{text}</p>
