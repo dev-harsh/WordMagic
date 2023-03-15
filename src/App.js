@@ -2,6 +2,13 @@ import Navbar from './Component/Navbar';
 import TextArea from './Component/TextArea';
 import React, { useState } from 'react';
 import Footer from './Component/Footer';
+import About from './Component/About';
+import Error404 from './Component/Error404';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 
 function App() {
@@ -17,13 +24,19 @@ function App() {
       setTheme("Light");
     }
   }
-  
+
   return (
-    <>
+    <BrowserRouter>
       <Navbar mode={theme} toggleMode={toggleMode}/>
-      <TextArea mode={theme}/>
+
+      <Routes>
+        <Route exact path="/about"  element={<About/>} />
+        <Route exact path="/"  element={<TextArea mode={theme}/>} />
+        <Route exact path="*"  element={<Error404/>} />
+      </Routes>
+      
       <Footer/>
-    </>
+    </BrowserRouter>
   );
 }
 
