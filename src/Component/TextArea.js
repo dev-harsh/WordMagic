@@ -5,7 +5,7 @@ import { useSpeechSynthesis } from 'react-speech-kit';
 export default function TextArea(props) {
     const [text,setText]=useState("");
     const {speak}=useSpeechSynthesis();
-
+    
     const handleText = (event)=>{
         setText(event.target.value);
     }
