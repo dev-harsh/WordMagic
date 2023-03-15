@@ -27,7 +27,8 @@ export default function TextArea(props) {
         }
         else
         {
-            return text.trim().split(" ").length;
+            // using regex
+            return text.split(/[ ]+/).join(" ").trim().split(" ").length;
         }
     }
 
@@ -35,6 +36,11 @@ export default function TextArea(props) {
         navigator.clipboard.writeText(text);
     }
 
+    const removeSpace = () =>{
+        let newText=text.split(/[ ]+/)
+        setText(newText.join(" "));
+    }
+    
 
     const mode = () =>{
         if((props.mode)==="Light")
@@ -88,6 +94,7 @@ export default function TextArea(props) {
                 <div className="container">
                     <button type="button" className="btn btn-primary m-1 px" onClick={upperCase}>UpperCase</button>
                     <button type="button" className="btn btn-primary m-1 px" onClick={lowerCase}>LowerCase</button>
+                    <button type="button" className="btn btn-primary m-1 px" onClick={removeSpace}>Remove Extra Space</button>
                     <button type="button" className="btn btn-success m-1 px" onClick={copyText}>Copy</button>
                     <button type="button" className="btn btn-danger m-1 px" onClick={clear}>Clear</button>
                 </div>
