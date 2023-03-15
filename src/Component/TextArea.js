@@ -1,8 +1,10 @@
 import React, {useState} from 'react'
 import './TextArea.css';
+import { useSpeechSynthesis } from 'react-speech-kit';
 
 export default function TextArea(props) {
     const [text,setText]=useState("");
+    const {speak}=useSpeechSynthesis();
 
     const handleText = (event)=>{
         setText(event.target.value);
@@ -39,6 +41,10 @@ export default function TextArea(props) {
     const removeSpace = () =>{
         let newText=text.split(/[ ]+/)
         setText(newText.join(" "));
+    }
+
+    const textToSpeech = () =>{
+        speak({text:text});
     }
     
 
@@ -97,6 +103,7 @@ export default function TextArea(props) {
                     <button type="button" className="btn btn-primary m-1 px" onClick={removeSpace}>Remove Extra Space</button>
                     <button type="button" className="btn btn-success m-1 px" onClick={copyText}>Copy</button>
                     <button type="button" className="btn btn-danger m-1 px" onClick={clear}>Clear</button>
+                    <button type="button" className="btn btn-success m-1 px" onClick={textToSpeech}>Read</button>
                 </div>
 
                 <div className="container my-4">
